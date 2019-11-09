@@ -5,6 +5,10 @@ let PostControls = {
     let allPosts = await PostModel.find();
     res.json(allPosts);
   },
+  single: async (req,res) => {
+    let singlePost = await PostModel.find({title: req.body.title});
+    res.json(singlePost);
+  },
   create: async (req,res) => {
     let newPost = new PostModel({
       title: req.body.title,

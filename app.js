@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 //Routes 
+app.get("/posts", Postcontroller.all);
 app.post("/posts", Postcontroller.create);
 
 //Listen
