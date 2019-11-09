@@ -1,0 +1,1 @@
+This is a MERN-stack practice tool, where I will build a Node.js server using Express, and then connecting it with a MongoDB Atlas DB. All CRUD routes will also be made.
