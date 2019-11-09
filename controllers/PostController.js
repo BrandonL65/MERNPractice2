@@ -16,7 +16,13 @@ let PostControls = {
       rating: parseInt(req.body.rating)
     })
     let savedPost = await newPost.save();
-    res.json(savedPost);
+    res.json(savedPost)
+  },
+  update: async ( req,res ) => {
+    let foundPost = await PostModel.findOneAndUpdate({title: req.body.title}, req.body, {
+      useFindAndModify: false
+    });
+    res.json(foundPost);
   }
 }
 module.exports = PostControls;
