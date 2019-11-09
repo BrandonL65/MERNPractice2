@@ -15,6 +15,9 @@ mongoose.connect("mongodb+srv://brandon123:123@devconnection-dazbv.mongodb.net/t
 }).catch(err => {
   console.log(err);
 })
+//Middleware 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 //Controllers 
 
 
