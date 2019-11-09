@@ -1,6 +1,7 @@
 let express = require("express");
 let app = express();
 let mongoose = require("mongoose");
+let Postcontroller = require("./controllers/PostController.js");
 let PORT = 5000;
 
 
@@ -22,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 //Routes 
-
+app.post("/posts", Postcontroller.create);
 
 //Listen
 
