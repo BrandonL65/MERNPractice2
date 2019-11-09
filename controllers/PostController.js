@@ -23,6 +23,12 @@ let PostControls = {
       useFindAndModify: false
     });
     res.json(foundPost);
+  },
+  delete: async ( req,res ) => {
+    let deletedPost = await PostModel.findOneAndDelete({title: req.body.title}, {
+      useFindAndModify: false
+    });
+    res.json(deletedPost);
   }
 }
 module.exports = PostControls;
