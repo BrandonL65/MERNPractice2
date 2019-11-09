@@ -2,6 +2,7 @@ let express = require("express");
 let app = express();
 let mongoose = require("mongoose");
 let Postroutes = require("./routes/PostRoutes.js");
+require("dotenv").config();
 let PORT = 5000;
 
 
