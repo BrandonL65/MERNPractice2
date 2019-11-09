@@ -1,7 +1,7 @@
 let express = require("express");
 let app = express();
 let mongoose = require("mongoose");
-let Postcontroller = require("./controllers/PostController.js");
+let Postroutes = require("./routes/PostRoutes.js");
 let PORT = 5000;
 
 
@@ -23,11 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 //Routes 
-app.get("/posts", Postcontroller.all);
-app.post("/posts/findOne", Postcontroller.single);
-app.post("/posts", Postcontroller.create);
-app.post("/posts/update", Postcontroller.update);
-app.delete("/posts", Postcontroller.delete);
+app.use("/", Postroutes);
 //Listen
 
 app.listen(5000);
