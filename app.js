@@ -3,7 +3,7 @@ let app = express();
 let mongoose = require("mongoose");
 let Postroutes = require("./routes/PostRoutes.js");
 require("dotenv").config();
-let PORT = 5000;
+let PORT = process.env.port || 5000;
 
 
 //Connect to DB 
@@ -11,7 +11,7 @@ let options = {
   useUnifiedTopology: true,
   useNewUrlParser: true
 }
-mongoose.connect("mongodb+srv://brandon123:123@devconnection-dazbv.mongodb.net/test?retryWrites=true&w=majority", options)
+mongoose.connect(process.env.DB_URL, options)
 .then(() => {
   console.log("Connected");
 }).catch(err => {
